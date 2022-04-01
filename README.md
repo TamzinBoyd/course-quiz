@@ -24,11 +24,22 @@ App is rendering home which renders question card - needs to be if statement, wh
 
 ok so see question, enter text, button to show answer.
 
-I think we need to EITHER render question card OR answer card.
-what about if statement based on state? isQuestionCard OR FLIP CARD?
+Decided to create answers and questions as a card which is flipped.
 
-question card
-answer card
+TO DO
+fix why it shows the 1st question twice
+fix restart quiz
 
-if isquestion card = true, question has no class, answer has hidden
-if isquestion card = false, question has hidden class & answer has none
+add authentification and link to userProvider. See if can have a screen before the homepage where you log in and it shows your name on each page?
+
+as rely on state to be updated before processing, try the following to instead update the state
+
+const [userFavourites, setUserFavourites] = useState([]);
+
+const addFavouriteHandler = (favouriteMeetup) => {
+// takes previous state as parameter
+setUserFavourites((previous) => {
+// adds paramater of new meetUp to the existing state
+return previous.concat(favouriteMeetup);
+});
+};

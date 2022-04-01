@@ -11,6 +11,7 @@ const Question = (props) => {
     buttonFunc,
     setIsQuestion,
   } = props;
+  // const [userFavourites, setUserFavourites] = useState([]);
 
   console.log(question);
   return (
