@@ -5,6 +5,7 @@ import Button from "../Button/Button";
 const Answer = (props) => {
   const {
     answer,
+    setAnswerModal,
     // answerNum,
     // setAnswerNum,
     // setAnswer,
@@ -18,15 +19,16 @@ const Answer = (props) => {
     setScore,
   } = props;
 
-  const handleScore = () => {
-    setScore(score + 1);
-    console.log(score);
+  const handleClose = () => {
+    setAnswerModal(false);
   };
   return (
-    <div>
-      <p>{answer}</p>
-      <Button buttonText="Correct Answer!" buttonFunc={handleScore} />
-    </div>
+    <section className={styles.modal}>
+      <div className={styles.modal__container}>
+        <p>{answer}</p>
+        <Button buttonText="Close" buttonFunc={handleClose} />
+      </div>
+    </section>
   );
 };
 

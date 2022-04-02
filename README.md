@@ -27,7 +27,6 @@ ok so see question, enter text, button to show answer.
 Decided to create answers and questions as a card which is flipped.
 
 TO DO
-fix why it shows the 1st question twice
 fix restart quiz
 
 add authentification and link to userProvider. See if can have a screen before the homepage where you log in and it shows your name on each page?
@@ -43,3 +42,5 @@ setUserFavourites((previous) => {
 return previous.concat(favouriteMeetup);
 });
 };
+
+Initially wanted a card to flip then decided instead on an answer modal, which took the answer number from state

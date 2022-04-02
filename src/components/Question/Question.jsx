@@ -1,16 +1,7 @@
 import React from "react";
 
 const Question = (props) => {
-  const {
-    question,
-    setQuestion,
-    data,
-    questionNum,
-    setQuestionNum,
-    buttonText,
-    buttonFunc,
-    setIsQuestion,
-  } = props;
+  const { question } = props;
   // const [userFavourites, setUserFavourites] = useState([]);
 
   console.log(question);
