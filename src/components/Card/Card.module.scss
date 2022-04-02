@@ -1,0 +1,30 @@
+@import "../../variables.scss";
+
+.container {
+  background-image: url(../../assets/background.jpg);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.question {
+  width: 50%;
+  height: 60%;
+  border-radius: 30px;
+  background-color: #e8bae9;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: $main-font;
+  font-size: 1.5em;
+
+  &__input {
+    width: 70%;
+    height: 25%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+  }
+}

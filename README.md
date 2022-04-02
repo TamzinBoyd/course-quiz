@@ -1,46 +1,35 @@
 PROBLEM
-I wanted a quiz prompt programme to help me concrete the knowledge I've learnt so far. Many offered 3 choices with definite answers whereas I wanted a free text box to note down information, before then viewing the answer. I could then self-select if I want happy with my answer or not, giving myself a score each time.
 
-INITIAL RAMBLINGS
-Home page with button to commence quiz
-1st question is shown - taken from data file. Also shown input box and button to submit
-On submit the answer is shown as well as a "correct" or "more work needed" button.
+I wanted a quiz prompt programme to help me concrete the knowledge I've learnt so far. After a quick Google I didn't really find anything that suited my needs so I decided to build my own.
 
-- correct increases score by 1
-- more work needed doesn't effect score
-- both take you to the next question
+As this is more of a revision prompt I didn't want a set answer for each question, I wanted the opportunity to write lots of text to really explore my understanding of the question. Then I wanted the answer to be shown and have the option to grade myself.
 
-State to hold score.
-State for question, state for answer.
+I'd mainly be using it on my laptop so it's been designed desktop-first.
 
-Function to update state to data.question[0+1]??
+SOLUTION
 
-On the last question there needs to be a "show me my score button"
-Which loads an end of quiz component to show score and "restart wuiz" button.
+1. Created a component tree so I could structure the site
 
-All states are reset on clicking this and it reverts to the home page.
+   - Log in for user to log in (mainly for practise using Firebase and authentification)
+   - Card to render Question, Answer and endQuiz
+   - All components needed access to a button
 
-App is rendering home which renders question card - needs to be if statement, which renders button and question
+2. Created a data file to hold the questions, later on I want to access these from Firestore
+3. Created useStates for questions & answers. In order to increment questions/answers and render the correct one I decided to store the question numbers separately. I set the initial state to the first question, then updated based on question number position in the array. Also needed to hold score.
+4. I created a Login/Welcome page with a button to start the quiz
+5. Initially I wanted a card which would flip between question and answer but soon decided a modal looked better, which showed the answer, gave me an option to update my score and closed the modal
+6. The quiz needed to reset at the end so I created an endQuiz modal which on button click resets the questions and score.
 
-ok so see question, enter text, button to show answer.
+DESIGN
+I prefer dark mode so opted for a dark star background...
 
-Decided to create answers and questions as a card which is flipped.
+FEATURES USED
+
+useContext
+Hooks - useState
+SASS
 
 TO DO
-fix restart quiz
-
 add authentification and link to userProvider. See if can have a screen before the homepage where you log in and it shows your name on each page?
-
-as rely on state to be updated before processing, try the following to instead update the state
-
-const [userFavourites, setUserFavourites] = useState([]);
-
-const addFavouriteHandler = (favouriteMeetup) => {
-// takes previous state as parameter
-setUserFavourites((previous) => {
-// adds paramater of new meetUp to the existing state
-return previous.concat(favouriteMeetup);
-});
-};
-
-Initially wanted a card to flip then decided instead on an answer modal, which took the answer number from state
+Add progress bar
+Take data from api/database
