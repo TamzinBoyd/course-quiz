@@ -43,6 +43,8 @@ const Card = (props) => {
     setScore(0);
   };
 
+  const showScore = `Your current score is ${score}`;
+
   return (
     <>
       <div className={styles.container}>
@@ -54,6 +56,7 @@ const Card = (props) => {
           />
           <Button buttonText="Show answer" buttonFunc={handleShowAnswer} />
           <Button buttonText="Next question" buttonFunc={handleNextQuestion} />
+          <p className={styles.question__score}>{showScore}</p>
         </div>
       </div>
       {answerModal ? (
@@ -69,10 +72,6 @@ const Card = (props) => {
       {isEndQuiz ? (
         <EndQuiz handleRestart={handleRestart} data={data} score={score} />
       ) : null}
-
-      <div>
-        <h3>Score: {score}</h3>
-      </div>
     </>
   );
 };

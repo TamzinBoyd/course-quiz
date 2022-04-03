@@ -22,7 +22,11 @@ const Answer = (props) => {
         <p className={styles.modal__answer}>{answer}</p>
         <div className={styles.modal__btn}>
           <Button buttonText="Correct Answer" buttonFunc={handleScore} />
-          <Button buttonText="Wrong Answer" buttonFunc={handleClose} />
+          <Button
+            buttonText="Wrong Answer"
+            buttonFunc={handleClose}
+            className="button"
+          />
         </div>
       </div>
     </section>

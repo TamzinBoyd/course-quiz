@@ -26,3 +26,16 @@
     font-size: 1.5em;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .modal {
+    &__container {
+      padding: 15px;
+    }
+
+    &__message {
+      font-size: 1em;
+      text-align: center;
+    }
+  }
+}
