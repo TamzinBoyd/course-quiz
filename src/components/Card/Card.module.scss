@@ -7,9 +7,12 @@
   display: flex;
 }
 
+h1 {
+  color: $main-color;
+}
 .question {
   width: 50%;
-  height: 60%;
+  height: 50%;
   border-radius: 30px;
   background-color: #e8bae9;
   margin: auto;
@@ -17,8 +20,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  color: $main-color;
   font-family: $main-font;
   font-size: 1.5em;
+  font-weight: 400;
+  padding: 30px;
+  text-align: center;
 
   &__input {
     width: 70%;
@@ -39,5 +46,6 @@
     height: 60%;
     border-radius: 20px;
     font-size: 1em;
+    padding: 20px;
   }
 }

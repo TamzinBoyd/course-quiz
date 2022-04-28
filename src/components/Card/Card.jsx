@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styles from "./Card.module.scss";
 import Button from "../Button/Button";
 import Question from "../Question/Question";
@@ -15,6 +15,7 @@ const Card = (props) => {
   const [answerModal, setAnswerModal] = useState(false);
   const [isEndQuiz, setIsEndQuiz] = useState(false);
   const [score, setScore] = useState(0);
+  const [inputValue, setInputValue] = useState("");
 
   const handleNextQuestion = () => {
     // check for endQuiz
@@ -31,6 +32,7 @@ const Card = (props) => {
 
   const handleShowAnswer = () => {
     setAnswerModal(true);
+    setInputValue("");
   };
 
   const handleRestart = () => {
@@ -53,6 +55,8 @@ const Card = (props) => {
           <input
             placeholder="Enter your answer here"
             className={styles.question__input}
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
           />
           <Button buttonText="Show answer" buttonFunc={handleShowAnswer} />
           <Button buttonText="Next question" buttonFunc={handleNextQuestion} />

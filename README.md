@@ -33,3 +33,12 @@ TO DO
 add authentification and link to userProvider. See if can have a screen before the homepage where you log in and it shows your name on each page?
 Add progress bar
 Take data from api/database
+
+AUTHENTIFICATION
+Used Firebase Auth
+MUI to create log in form
+useNavitage to navigate to start of quiz based on authorisation of log in
+react - Toastify for managing log in errors
+
+TO DO
+I've added the log in functionality but need to re-arrange to suit quiz app

@@ -1,16 +1,18 @@
 import React, { createContext, useState } from "react";
+import LogIn from "../components/LogIn/LogIn";
 
 export const UserContext = createContext({});
 
 const UserProvider = (props) => {
-  // set intiial values
-  const user = {
-    name: "Tamzin",
-    email: "test@email.co.uk",
+  const [user, setUser] = useState("");
+
+  const data = {
+    user: user,
+    setUser: setUser,
   };
 
   return (
-    <UserContext.Provider value={user}>{props.children}</UserContext.Provider>
+    <UserContext.Provider value={data}>{props.children}</UserContext.Provider>
   );
 };
 
